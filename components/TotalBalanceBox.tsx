@@ -1,5 +1,6 @@
 import React from 'react'
 import AnimatedCounter from './AnimatedCounter'
+import DoughnutChart from './DoughnutChart';
 
 interface TotlaBalanceBoxProps {
     accounts?: any[];
@@ -13,7 +14,7 @@ function TotalBalanceBox({
     return (
         <section className='total-balance'>
             <div className='total-balance-chart'>
-                {/* DougbnutChart */}
+                <DoughnutChart accounts={accounts} />
             </div>
             <div className='flex flex-col gap-6'>
                 <h2 className='header-2'>
