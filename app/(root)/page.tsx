@@ -5,7 +5,7 @@ import React from 'react'
 
 function Home() {
 
-  const loggedIn = {firstName: 'Dercio'};
+  const loggedIn = {firstName: 'Dercio', lastName: 'Anselmo', email: 'dercio@eventagrate.com'};
   return (
     <section className='home'>
       <div className='home-content'>
