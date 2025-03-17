@@ -39,27 +39,31 @@ const MobileNav = ({user}: MobileNavProps) => {
                             {sidebarLinks.map(function (item) {
                             const isActive = pathName === item.route || pathName.startsWith(`${item.route}/`)
                             return (
-                                <Link href={item.route} key={item.label} className={cn('sidebar-link', {'bg-bank-gradient': isActive})}>
-                                    <div className="relative size-6">
-                                        <Image
+                                <SheetClose asChild key={item.route}>
+                                    <Link href={item.route} key={item.label} className={cn('mobilenav-sheet_close w-full', {'bg-bank-gradient': isActive})}>
+                                       <Image
                                             src={item.imgURL}
                                             alt={item.label}
-                                            fill
+                                            width={20}
+                                            height={20}
                                             className={cn({
                                                 'brightness-[3] invert-0': isActive
                                             })}
                                         />
-                                    </div>
-                                    <p className={cn('sidebar-label', {'!text-white' : isActive})}>
-                                        {item.label}
-                                    </p>
-                                </Link>
+                                        <p className={cn('text-16 font-semibold text-black-2', {'text-white' : isActive})}>
+                                            {item.label}
+                                        </p>
+                                    </Link>
+                                </SheetClose>
+                                
                             )
                         })}
+
+                        USER
                         </nav>
                     </SheetClose>
+                    FOOTER
                 </div>
-                
         </SheetContent>
         </Sheet>
 
