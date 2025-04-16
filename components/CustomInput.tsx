@@ -5,22 +5,29 @@ import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
 import {
-  Form,
   FormControl,
-  FormDescription,
   FormField,
-  FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Control } from "react-hook-form"
 
 import React from 'react'
+import { authFormSchema } from "@/lib/utils"
 
-const CustomInput = ({form, name, label, placeholder, type}) => {
+interface CustomInput{
+    control: Control<z.infer<typeof authFormSchema>>,
+    name: 'email' | 'password',
+    label: string,
+    placeholder: string
+    type: string
+}
+
+const CustomInput = ({control, name, label, placeholder, type}: CustomInput) => {
   return (
     <FormField
-    control={form.control}
+    control={control}
     name={name}
     render={({ field }) => (
         <div className='form-item'>
